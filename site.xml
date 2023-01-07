@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/junit_tools_spring_1.2.0.jar" id="junit_tools_spring" version="1.2.0">
+      <category name="unit-testing"/>
+   </feature>
+   <category-def name="unit-testing" label="Unit Testing">
+      <description>
+         Plugin for Unit Test Generation
+      </description>
+   </category-def>
+</site>
