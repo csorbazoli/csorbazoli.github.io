@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/junit_tools_spring_1.2.0.jar" id="junit_tools_spring" version="1.2.0">
+   <description name="JUnit-Tools 4 Spring" url="https://github.com/csorbazoli/junit-tools">
+      Tools around the creation and management of JUnit tests for Spring development.
+   </description>
+   <feature url="features/junit_tools_spring_1.2.1.jar" id="junit_tools_spring" version="1.2.1">
       <category name="unit-testing"/>
    </feature>
    <category-def name="unit-testing" label="Unit Testing">
