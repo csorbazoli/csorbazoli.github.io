@@ -5,4 +5,4 @@ GitHub.io webpage for my repository
 [Update Site](https://csorbazoli.github.io/junit-tools-updatesite/)
 
 # JUnit Tools for Spring Release notes
-[Release Notes](https://csorbazoli.github.io/junit-tools-updatesite/README.md)
+Click link to display [Release Notes](https://github.com/csorbazoli/csorbazoli.github.io/tree/main/junit-tools-updatesite)
