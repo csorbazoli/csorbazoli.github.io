@@ -27,10 +27,14 @@ You can find the samples below on [GitHub](https://github.com/csorbazoli/junit-t
 Feel free to clone this repository and play around with the test generation functionality of the plug-in.
 
 ### Testing static methods
+This is the simplest case as the test class does not need any specific annotation, and no need to initialize the tested class either.
 
 | Base class  | Test class |
 | ------------- | ------------- |
 | ![Static method in base class](images/sample_static_method_base.png)  | ![Test for static method](images/sample_static_method_test.png)  |
+
+> Note, that the gherkin style comments are separating the test method body to distinct blocks that clearly shows what are prerequisites, what is tested and
+what do we check.
 
 ### Testing a method with simple input parameters
 
