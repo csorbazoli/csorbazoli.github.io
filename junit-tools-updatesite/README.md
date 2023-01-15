@@ -41,6 +41,7 @@ For simple input parameters (i.e. primitive types) the plug-in is setting some p
 Same goes for the return value, that an assertEquals will be generated with a predefined default value.
 
 For example
+
 | Base class  | Test class |
 | ------------- | ------------- |
 | ![Method with primitive parameters](images/sample_primitive_params_base.png)  | ![Test initializing primitive parameters](images/sample_primitive_params_test.png)  |
@@ -74,6 +75,7 @@ assertDoesNotThrow(() -> underTest.someMethod("some value");
 
 Since it's vary what the side effects can be, the plug-in only generates a `TODO` comment only.
 For example
+
 | Base class  | Test class |
 | ------------- | ------------- |
 | ![Method without return value](images/sample_void_method_base.png)  | ![Test for method without return value](images/sample_void_method_test.png)  |
