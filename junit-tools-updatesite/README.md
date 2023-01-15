@@ -184,6 +184,16 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.2.4 documentation and test generation improvements
+* extended the readme for the use cases
+* switch to test case works with the integration tests too
+* option to generate new test method for same base method
+* make "throws Exception" configurable
+* link to issue tracker on GitHub
+* fine-tune test method generation for
+** static methods
+** controller classes
+
 ## v1.2.3 sample test util
 * sample test util implementation updates
 

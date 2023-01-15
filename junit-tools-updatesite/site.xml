@@ -3,7 +3,7 @@
    <description name="JUnit-Tools 4 Spring" url="https://github.com/csorbazoli/junit-tools">
       Tools around the creation and management of JUnit tests for Spring development.
    </description>
-   <feature url="features/junit_tools_spring_1.2.3.jar" id="junit_tools_spring" version="1.2.3">
+   <feature url="features/junit_tools_spring_1.2.4.jar" id="junit_tools_spring" version="1.2.4">
       <category name="unit-testing"/>
    </feature>
    <category-def name="unit-testing" label="Unit Testing">
