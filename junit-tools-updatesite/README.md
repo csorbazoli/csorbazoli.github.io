@@ -36,11 +36,47 @@ This is the simplest case as the test class does not need any specific annotatio
 > Note, that the gherkin style comments are separating the test method body to distinct blocks that clearly shows what are prerequisites, what is tested and
 what do we check.
 
-### Testing a method with simple input parameters
+### Testing a method with simple input parameters / return value
+For simple input parameters (i.e. primitive types) the plug-in is setting some predefined default values instead of leaving them uninitialzed.
+Same goes for the return value, that an assertEquals will be generated with a predefined default value.
 
-### Testing a method with a simple return value
+For example
+| Base class  | Test class |
+| ------------- | ------------- |
+| ![Method with primitive parameters](images/sample_primitive_params_base.png)  | ![Test initializing primitive parameters](images/sample_primitive_params_test.png)  |
+
+> There will be a preference page for the plug-in to set up the default values you prefer, although it's just a formality as you'll need to customize the values anyway
+according to the logic of the method you're testing.
+> The main goal of this functionality to reduce the manual effort on writing the initialization steps and the assert clause.
 
 ### Testing a method without return value
+When the method has no return value (i.e. void), then you'll need to test for some "side effect", like these
+* the method may change one of the input parameters
+
+```java
+assertThat(param.getChangedField()).isEqualTo("new value");
+```
+* the method may call another service with certain arguments
+
+```java
+verify(otherService).otherMethod("some value");
+```
+* the method may throw an exception
+
+```java
+assertThrows(SomeException.class, () -> underTest.someMethod("some value");
+```
+* the method may not throw any exception
+
+```java
+assertDoesNotThrow(() -> underTest.someMethod("some value");
+```
+
+Since it's vary what the side effects can be, the plug-in only generates a `TODO` comment only.
+For example
+| Base class  | Test class |
+| ------------- | ------------- |
+| ![Method without return value](images/sample_void_method_base.png)  | ![Test for method without return value](images/sample_void_method_test.png)  |
 
 ### Testing a method with complex input parameters
 One of the most tedious part of writing a unit test is the preparation of input parameters when mocking is not sufficient.
@@ -48,6 +84,11 @@ Mocking an input parameter is only useful when you have an interface or a class 
 
 On the other hand, when you need to deal with data then you need to prepare that item with all it's fields that are relevant for that method.
 This can require a big effort and lot of extra work.
+
+See the example in the case above, where the method had the `DemoObject` input parameter. The generated test initializing the parameter with the
+TestValueFactory.
+
+ ![Test for method without return value](images/sample_complex_param_test.png)
 
 Using *TestValueFactory* is a nice workaround for this problem. It prefills all fields of given data object (e.g. Java Bean) with consistent and predictable values.
 So you can rely on that the input data is always the same and you only need to take care of the fields that are special related to that function. For example
@@ -62,6 +103,10 @@ If the input parameter is not a primitive value, then the generator assumes that
 When the tested method is producing a complex data structure in the response, then it can be tedious to test all of details of that object.
 Either you're expecting that only a handful of properties were changing as a "side-effect" of the method execution, 
 or all of the fields are important because it the method is creating a new object based upon the input parameters (e.g. a converter from an entity to a DTO).
+
+| Base class  | Test class |
+| ------------- | ------------- |
+| ![Method with complex return value](images/sample_complex_return_base.png)  | ![Test for method with complex return value](images/sample_complex_return_test.png)  |
 
 In my opinion, this makes the test maintenance way easier and this way the test can detect (and protect from) accidental changes resulting from changes in the data model.
 It may sound controversial, but actually this can help a lot.
@@ -86,8 +131,8 @@ For example, if the method supposed to save an entity to the database with speci
 ```
 
 ### Testing Spring related classes
-Spring tests are slightly different than the usual barebone or mocked test classes.
-These tests are instantiating a Spring context when they are running with it's pros and cons.
+Spring tests are slightly different than the usual basic or mocked test classes.
+These tests are instantiating a Spring context when they are running, that comes with it's pros and cons.
 Advantages:
 * it's more comprehensive and reliable for testing Spring feature (e.g. caching)
 * it can use the environment configuration properties (i.e. entries from application.yml)
@@ -111,9 +156,29 @@ Good practices:
 ** Database, in case you are writing custom database handling methods instead of generated ones
 
 #### Example: Testing a Spring service
+One important part of testing a class that has some dependencies (i.e. injected fields), that these fields need to be mocked properly.
+
+You can use either Mockito or Spring extensions to execute these tests. There are slight differences in how the class and the fields are annotated, as described above.
+
+| Base class  | Test class with MockitoExtension | Test class with SpringExtension |
+| ------------- | ------------- | ------------- |
+| ![Test class with dependencies](images/sample_spring_service_base.png)  | ![Test dependencies with Mockito](images/sample_spring_service_mockito_test.png)  | ![Test dependencies with Spring](images/sample_spring_service_integrated_test.png)  |
+
+> Note, that `@ExtendWith(SpringExtension.class)` is superfluous, that's why it's not generated.
 
 #### Example: Testing a Spring controller with different endpoints
+A special case of testing Spring components when we need to write tests for REST controllers or other public endpoints of the Spring application.
 
+The plug-in generates an enhanced test method for these endpoints that were implemented in methods annotated with some `RequestMapping` annotation (e.g. `GetMapping`).
+The test class is going to initialize a `MockMVC` component and the test methods are calling the HTTP endpoint instead of direct method calls.
+
+| Base class  | Test class |
+| ------------- | ------------- |
+| ![Controller class with endpoints](images/sample_controller_base.png)  | ![Test class for Controller with endpoints](images/sample_controller_test.png)  |
+
+> Note, it's better keeping these tests in a separate test class considering the "integrated flavour" and that these a running slightly slower than the other tests.
+> The checking of the results can be also trickier than with the mocked tests. Use the integrated tests only for checking the functionality that depends on the framework
+> (i.e. is the endpoint available instead of resulting a HTTP 404 error, are the default values for the parameters correctly handled, the values correctly parsed from a JSon payload, etc).
 
 # Release notes
 
