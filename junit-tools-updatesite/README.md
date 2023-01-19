@@ -5,10 +5,11 @@
 Create a tool for helping the developers to write simple and maintainable unit tests with minimal effort on the tedious part and let them focus on the important part of the tests.
 
 This plugin promotes the "Test First" approach. Create a well structured test method skeleton from the method signature with
+
 * given-when-then blocks (Gherkin style)
-** given: pre-initialized parameter values
-** when: method is called
-** then: assert for return value
+    - given: pre-initialized parameter values
+    - when: method is called
+    - then: assert for return value
 
 Additional features:
 * using mockito runner for fast test execution
@@ -150,12 +151,12 @@ Formal differences:
 Good practices:
 * Use simple mocking instead if no Spring specific functionality is tested
 * Minimize the Spring context to the bare minimum
-** Mainly for the tested class only instead of building up the full application
-** Avoid initializing the database engine, unless you specifically want to test that
+    - Mainly for the tested class only instead of building up the full application
+    - Avoid initializing the database engine, unless you specifically want to test that
 * Use Spring test for the following areas
-** Caching (e.g. @Cacheable, @EvictCache), that is especially useful to make sure the cache configuration works properly as it's easy to misconfigure/break
-** (REST) Controller endpoints (e.g. @GetMapping, @PostMapping), where easy to misconfigure the parameters, default values, headings, etc.
-** Database, in case you are writing custom database handling methods instead of generated ones
+    - Caching (e.g. @Cacheable, @EvictCache), that is especially useful to make sure the cache configuration works properly as it's easy to misconfigure/break
+    - (REST) Controller endpoints (e.g. @GetMapping, @PostMapping), where easy to misconfigure the parameters, default values, headings, etc.
+    - Database, in case you are writing custom database handling methods instead of generated ones
 
 #### Example: Testing a Spring service
 One important part of testing a class that has some dependencies (i.e. injected fields), that these fields need to be mocked properly.
@@ -191,8 +192,8 @@ The test class is going to initialize a `MockMVC` component and the test methods
 * make "throws Exception" configurable
 * link to issue tracker on GitHub
 * fine-tune test method generation for
-** static methods
-** controller classes
+	* static methods
+	* controller classes
 
 ## v1.2.3 sample test util
 * sample test util implementation updates
