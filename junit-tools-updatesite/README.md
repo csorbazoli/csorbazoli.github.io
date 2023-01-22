@@ -185,6 +185,9 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.2.5 switch between code and test
+* improved method name look-up
+
 ## v1.2.4 documentation and test generation improvements
 * extended the readme for the use cases
 * switch to test case works with the integration tests too
