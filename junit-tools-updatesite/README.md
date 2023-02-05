@@ -185,6 +185,11 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.2.7 improve assert generation
+* assertion for Optional result
+* assertion for ResponseEntity result
+* preference page for default values
+
 ## v1.2.6 improve parameter value generation
 * handling generic types
 * assertion for Optional result
