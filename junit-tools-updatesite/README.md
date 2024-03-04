@@ -22,6 +22,15 @@ Spring support:
 * use Spring testing annotations if that is preferred or needed
 * enhanced rest endpoint testing with MockMvc
 
+## Important note / disclaimer
+
+This plugin has reasonable default settings for creating test method skeletons, but you'll need to extend and fine tune those settings based on the ever changing
+requirements of your specific project. The plugin has a configurable set of default values for the input parameters, imports, naming conventions and so on. Feel free
+adjust these settings according to your needs.
+Please remember, that testing is a continuous effort that is part of the development task. The test implementation evolves together with the production code, 
+just like the tools that we use.
+
+
 ## Samples
 
 You can find the samples below on [GitHub](https://github.com/csorbazoli/junit-tools/tree/master/junit-tools-demo).
@@ -184,6 +193,11 @@ The test class is going to initialize a `MockMVC` component and the test methods
 > (i.e. is the endpoint available instead of resulting a HTTP 404 error, are the default values for the parameters correctly handled, the values correctly parsed from a JSon payload, etc).
 
 # Release notes
+
+## v1.2.8 bug fixes and configuration improvements
+* fixed typo in easymock import
+* preference for Assert.* vs Assertions.assertThat
+* different hint for void methods for easymock vs mockito
 
 ## v1.2.7 improve assert generation
 * assertion for Optional result
