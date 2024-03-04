@@ -2,7 +2,7 @@
 GitHub.io webpage for my repository
 
 # JUnit Tools for Spring
-[Update Site](https://csorbazoli.github.io/tree/main/junit-tools-updatesite)
+[Update Site](https://github.com/csorbazoli/csorbazoli.github.io/tree/main/junit-tools-updatesite)
 
 ## Aim of this project
 Create a tool for helping the developers to write simple and maintainable unit tests with minimal effort on the tedious part and let them focus on the important part of the tests.
@@ -28,4 +28,4 @@ Spring support:
 **Find more details in the Release Notes...**
 
 # JUnit Tools for Spring Release notes
-Click link to display [Release Notes](https://github.com/csorbazoli/csorbazoli.github.io/junit-tools-updatesite/)
+Click link to display [Release Notes](https://csorbazoli.github.io/junit-tools-updatesite/)
