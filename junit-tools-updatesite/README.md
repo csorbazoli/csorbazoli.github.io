@@ -194,6 +194,11 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.2.9 bug fixes and configuration improvements
+* fixed persistence of preferences
+* preference for standard method bodies (before/after)
+* TestUtils.assertTestFileEquals
+
 ## v1.2.8 bug fixes and configuration improvements
 * fixed typo in easymock import
 * preference for Assert.* vs Assertions.assertThat
