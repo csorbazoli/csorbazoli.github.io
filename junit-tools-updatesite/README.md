@@ -194,6 +194,11 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.0 configuration improvements
+* fixed initial value handling of preferences (mock framework and junit version)
+* preference page for standard method bodies adjusted for older versions of JFace (StringFieldEditor did not support multi-line text)
+* not generating standard methods, imports and underTest declaration each time, but only for new test classes
+
 ## v1.2.9 bug fixes and configuration improvements
 * fixed persistence of preferences
 * preference for standard method bodies (before/after)
