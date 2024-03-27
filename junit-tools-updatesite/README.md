@@ -194,6 +194,11 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.1 EasyMock improvements
+* option to generate replayAll and verifyAll methods
+* generate @Mock fields for potential injected values
+* init @TestSubject with default constructor
+
 ## v1.3.0 configuration improvements
 * fixed initial value handling of preferences (mock framework and junit version)
 * preference page for standard method bodies adjusted for older versions of JFace (StringFieldEditor did not support multi-line text)
