@@ -194,6 +194,10 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.2 Assertion improvements
+* option to use same package structure for test resources (assertTestFileEquals)
+* add necessary static imports for EasyMock replay and verify
+
 ## v1.3.1 EasyMock improvements
 * option to generate replayAll and verifyAll methods
 * generate @Mock fields for potential injected values
