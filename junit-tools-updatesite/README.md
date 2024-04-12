@@ -194,6 +194,12 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.3 configuration improvements
+* preference page to specify additional imports, static imports and fields for the test class
+* default value updates:
+    * use forward slash for path names in assertTestFileEquals
+    * use TestValueFactory.fillFields instead of getValueForType
+
 ## v1.3.2 Assertion improvements
 * option to use same package structure for test resources (assertTestFileEquals)
 * add necessary static imports for EasyMock replay and verify
@@ -238,8 +244,8 @@ The test class is going to initialize a `MockMVC` component and the test methods
 * make "throws Exception" configurable
 * link to issue tracker on GitHub
 * fine-tune test method generation for
-	* static methods
-	* controller classes
+    * static methods
+    * controller classes
 
 ## v1.2.3 sample test util
 * sample test util implementation updates
