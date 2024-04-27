@@ -194,6 +194,9 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.5 specify new test method's position
+* option for new test method's position: after (default), before, last
+
 ## v1.3.4 hotfix for additional import configuration
 * the new feature is causing exception on new test class creation
 
