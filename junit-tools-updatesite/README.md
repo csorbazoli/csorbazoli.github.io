@@ -194,6 +194,10 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.6 bugfix for new test method's position
+* fixing the correct placement of new test method for 'after' and 'before' options
+# jump to newly created method after generation
+
 ## v1.3.5 specify new test method's position
 * option for new test method's position: after (default), before, last
 
