@@ -194,6 +194,9 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.3.8 test class fine-tuning
+* the 'underTest' field should be private in JUnit4 tests instead of public
+
 ## v1.3.7 more options around mock frameworks
 * 'none' to not use a mock framework (e.g. use nullables instead)
 * option to chose between runner annotation or init statements in before method 
