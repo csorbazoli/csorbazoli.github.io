@@ -3,7 +3,7 @@
    <description name="Approval Test Button Plugin" url="https://github.com/csorbazoli/approvaltestbutton">
       Review and approve test results for test failues based on file comparison differences, i.e. ApprovalTest failures.
    </description>
-   <feature url="features/approvaltestutton_1.0.4.jar" id="approvaltestutton" version="1.0.4">
+   <feature url="features/approvaltestutton_1.0.5.jar" id="approvaltestutton" version="1.0.5">
       <category name="unit-testing"/>
    </feature>
    <category-def name="unit-testing" label="Unit Testing">
