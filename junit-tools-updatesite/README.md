@@ -194,6 +194,18 @@ The test class is going to initialize a `MockMVC` component and the test methods
 
 # Release notes
 
+## v1.4.1 test class fine-tuning
+Option to use Approvals.verify instead of TestUtils.assertTestFileEquals
+Fix: Don't generate tests for private methods
+
+## v1.4.0 test class fine-tuning
+Rebuild with new version number
+
+## v1.3.9 test class fine-tuning
+Make java source folder configurable as well
+Improved error handling to avoid big error dialogs with stack traces
+Fix: Don't generate mocks if 'none' was selected
+
 ## v1.3.8 test class fine-tuning
 * the 'underTest' field should be private in JUnit4 tests instead of public
 
